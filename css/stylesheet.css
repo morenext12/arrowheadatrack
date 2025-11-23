@@ -11,22 +11,24 @@ header {
   height: 100vh;
   background-size: cover;
   background-position: center;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: relative;
 }
 
-/* Navigation */
+/* Navigation Bar at Top */
 ul {
   padding: 20px 0;
   width: 100%;
   text-align: center;
   list-style-type: none;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
+/* Navigation Items */
 ul li {
   display: inline-block;
   margin: 0 10px;
@@ -45,10 +47,11 @@ ul li a:hover {
   color: #000;
 }
 
-/* Title Section */
+/* Title Centered */
 .title {
+  margin-top: auto;
+  margin-bottom: auto;
   text-align: center;
-  padding: 20px;
 }
 
 .title h1 {
