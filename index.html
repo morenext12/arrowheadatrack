@@ -1,84 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pixel Heart</title>
-  <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+<title> Pixel Heart </title>
+<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
 </head>
 <body>
-
-  <!-- Background Music -->
-  <audio autoplay loop hidden>
-    <source src="number one.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <!-- Main Background Wrapper -->
-  <div class="wrapper">
-
-    <!-- Header Navigation -->
-    <header>
-      <nav>
-        <ul>
-          <li><a href="0.html">Download</a></li>
-          <li><a href="https://www.youtube.com/@ArrowheadAtrack" target="_blank">Arrowhead Atrack Playlist</a></li>
-          <li><a href="https://www.youtube.com/@arkbeats4128" target="_blank">ArkBeats</a></li>
-          <li><a href="https://www.youtube.com/@technomindrecords" target="_blank">Sonata Sa Lungsod</a></li>
-          <li><a href="https://www.youtube.com/@pass4th383" target="_blank">Pass4th</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <!-- Main Title -->
-    <h1>Pixel Heart</h1>
-    <h2>Status: Active</h2>
-
-    <!-- Animated Circles sa Background -->
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-    <div><span class="dot"></span></div>
-
-  </div>
-
-  <!-- JavaScript para sa Electric Mouse Effect -->
-  <script>
-    document.addEventListener('mousemove', function(e) {
-      if (Math.random() > 0.35) return;
-
-      const spark = document.createElement('div');
-      spark.className = 'electric-spark';
-
-      spark.style.left = e.pageX + 'px';
-      spark.style.top = e.pageY + 'px';
-
-      const angle = Math.random() * 360;
-      const tx = (Math.random() - 0.5) * 50 + 'px';
-      const ty = (Math.random() - 0.5) * 50 + 'px';
-
-      spark.style.setProperty('--angle', angle);
-      spark.style.setProperty('--tx', tx);
-      spark.style.setProperty('--ty', ty);
-
-      document.body.appendChild(spark);
-
-      setTimeout(() => {
-        spark.remove();
-      }, 500);
-    });
-  </script>
-
-</body>
+<embed src="number one.mp3" loop="true" autostart="true" width="0" height="0">
+<header>
+<div class="main">
+<div class="L">
+<img src="L.jpeg" width="0px">
+<ul>
+	<li><a href="0.html">Download</a></li>
+	<li><a href="https://www.youtube.com/@ArrowheadAtrack">Arrowhead Atrack Playlist</a></li>
+	<li><a href="https://www.youtube.com/@arkbeats4128">ArkBeats</a></li>
+	<li><a href="https://www.youtube.com/@technomindrecords">Sonata Sa Lungsod</a></li>
+	<li><a href="https://www.youtube.com/@pass4th383">Pass4th</a></li>	
+	
+</ul>
+</div>
 </html>
