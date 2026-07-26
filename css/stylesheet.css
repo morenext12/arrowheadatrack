@@ -1,77 +1,61 @@
-/* --- FIX NAVIGATION POSITIONING --- */
+{ margin: 0;
+padding: 0;
+}
+
 header {
-  position: absolute;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 100; /* Para siguradong nasa ibabaw ng background animation */
-  width: 90%;
+	background-image: url(../3.jpg);
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 20px;
-  list-style: none;
+ul{
+  padding: 20px 0;
+  border: 1px solid white;
+  text-align: center;
+  list-style-type: none;
+  
 }
 
-nav ul li a {
-  color: #ffffff;
-  text-decoration: none;
-  font-family: sans-serif;
-  font-weight: bold;
-  font-size: 16px;
-  padding: 8px 16px;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+ul li {
+	display: inline-block;
 }
 
-nav ul li a:hover {
-  background: #04fafd;
-  color: #030423;
-  box-shadow: 0 0 15px #04fafd, 0 0 25px #119dff;
+ul li a{
+	text-decoration: none;
+	color: #fff;
+	padding: 5px 20px;
+	border: 1px solid #fff;
+	transition: 0.6s ease;
+	
 }
 
-/* --- ELECTRIC MOUSE EFFECT CSS --- */
-.electric-spark {
-  position: absolute;
-  pointer-events: none; /* Hindi maboblock ang pag-click sa links */
-  width: 6px;
-  height: 6px;
-  background: #04fafd;
-  border-radius: 50%;
-  box-shadow: 
-    0 0 8px #04fafd,
-    0 0 15px #04fafd,
-    0 0 25px #119dff,
-    0 0 35px #fff;
-  animation: electric-glow 0.5s linear forwards;
-  z-index: 9999;
+ul li a:hover{
+	background-color: #fff;
+	color:#000;
 }
 
-.electric-spark::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 14px;
-  height: 2px;
-  background: #fff;
-  box-shadow: 0 0 6px #04fafd;
-  transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg));
+.title{ 
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%,-50%)
+		 
+}
+.title h1{
+		Color: #fff;
+		font-size: 50px;	
+		
 }
 
-@keyframes electric-glow {
-  0% {
-    opacity: 1;
-    transform: scale(1) translate(0, 0);
-  }
-  100% {
-    opacity: 0;
-    transform: scale(0.2) translate(var(--tx), var(--ty));
-  }
-}
+
+.title h2{
+		Color: #fff;
+		font-size: 20px;
+		position:fixed;
+		bottom:-1;
+		left:160;
+		text-decoration: underline 0.6px;
+}		
+	
+	
