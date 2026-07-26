@@ -1,81 +1,198 @@
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Electro Effect Demo</title>
+  <style>
+    /* --- IYONG CSS --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Header Section */
-header {
-  background-image: url('../3.jpg');
-  height: 100vh;
-  background-size: cover;
-  background-position: center;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
+    body {
+      overflow: hidden; /* Para walang scrollbars sa background */
+    }
 
-/* Navigation Bar at Top */
-ul {
-  padding: 20px 0;
-  width: 100%;
-  text-align: center;
-  list-style-type: none;
-  background: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+    .wrapper {
+      height: 100vh;
+      width: 100vw;
+      background: linear-gradient(180deg, #04fafd, 5%, #119dff, 50%, #030423);
+      position: absolute;
+    }
 
-/* Navigation Items */
-ul li {
-  display: inline-block;
-  margin: 0 10px;
-}
+    .wrapper h1 {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      color: #fff;
+      font-size: 40px;
+      font-weight: 888;
+      text-transform: uppercase;
+      text-shadow: 0 0 10px rgba(4, 250, 253, 0.8);
+      user-select: none;
+    }
 
-ul li a {
-  text-decoration: none;
-  color: #fff;
-  padding: 8px 20px;
-  border: 1px solid #fff;
-  transition: 0.3s ease;
-}
+    .wrapper h2 {
+      top: 5%;
+      left: 80%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      font-family: sans-serif;
+      letter-spacing: 1px;
+      word-spacing: 2px;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 888;
+      user-select: none;
+    }
 
-ul li a:hover {
-  background-color: #fff;
-  color: #000;
-}
+    .wrapper div {
+      height: 60px;
+      width: 60px;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+      border-radius: 50px;
+      position: absolute;
+      top: 10%;
+      left: 10%;
+    }
 
-/* Title Centered */
-.title {
-  margin-top: auto;
-  margin-bottom: auto;
-  text-align: center;
-}
+    div .dot {
+      height: 10px;
+      width: 10px;
+      border-radius: 50px;
+      background: rgba(255, 255, 255, 0.5);
+      position: absolute;
+      top: 20%;
+      right: 20%;
+    }
 
-.title h1 {
-  color: #fff;
-  font-size: 3rem;
-}
+    .wrapper div:nth-child(1) { top: 20%; left: 20%; animation: animate 8s linear infinite; }
+    .wrapper div:nth-child(2) { top: 60%; left: 80%; animation: animate 10s linear infinite; }
+    .wrapper div:nth-child(3) { top: 40%; left: 40%; animation: animate 3s linear infinite; }
+    .wrapper div:nth-child(4) { top: 66%; left: 30%; animation: animate 7s linear infinite; }
+    .wrapper div:nth-child(5) { top: 90%; left: 10%; animation: animate 9s linear infinite; }
+    .wrapper div:nth-child(6) { top: 30%; left: 60%; animation: animate 5s linear infinite; }
+    .wrapper div:nth-child(7) { top: 70%; left: 20%; animation: animate 8s linear infinite; }
+    .wrapper div:nth-child(8) { top: 75%; left: 60%; animation: animate 10s linear infinite; }
+    .wrapper div:nth-child(9) { top: 50%; left: 50%; animation: animate 6s linear infinite; }
+    .wrapper div:nth-child(10) { top: 45%; left: 20%; animation: animate 10s linear infinite; }
+    .wrapper div:nth-child(11) { top: 10%; left: 90%; animation: animate 9s linear infinite; }
+    .wrapper div:nth-child(12) { top: 20%; left: 70%; animation: animate 7s linear infinite; }
+    .wrapper div:nth-child(13) { top: 20%; left: 20%; animation: animate 8s linear infinite; }
+    .wrapper div:nth-child(14) { top: 60%; left: 5%; animation: animate 6s linear infinite; }
+    .wrapper div:nth-child(15) { top: 90%; left: 80%; animation: animate 9s linear infinite; }
 
-.title h2 {
-  color: #fff;
-  font-size: 1.2rem;
-  margin-top: 10px;
-  text-decoration: underline;
-}
+    @keyframes animate {
+      0% {
+        transform: scale(0) translateY(0) rotate(70deg);
+      }
+      100% {
+        transform: scale(1.3) translateY(-100px) rotate(360deg);
+      }
+    }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .title h1 {
-    font-size: 2.2rem;
-  }
-  .title h2 {
-    font-size: 1rem;
-  }
-  ul li {
-    display: block;
-    margin: 10px 0;
-  }
-}
+    /* --- ELECTRIC MOUSE EFFECT CSS --- */
+    .electric-spark {
+      position: absolute;
+      pointer-events: none;
+      width: 6px;
+      height: 6px;
+      background: #04fafd;
+      border-radius: 50%;
+      box-shadow: 
+        0 0 8px #04fafd,
+        0 0 15px #04fafd,
+        0 0 25px #119dff,
+        0 0 35px #fff;
+      animation: electric-glow 0.5s linear forwards;
+      z-index: 9999;
+    }
+
+    .electric-spark::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 14px;
+      height: 2px;
+      background: #fff;
+      box-shadow: 0 0 6px #04fafd;
+      transform: translate(-50%, -50%) rotate(calc(var(--angle) * 1deg));
+    }
+
+    @keyframes electric-glow {
+      0% {
+        opacity: 1;
+        transform: scale(1) translate(0, 0);
+      }
+      100% {
+        opacity: 0;
+        transform: scale(0.2) translate(var(--tx), var(--ty));
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrapper">
+    <h1>Electro Effect</h1>
+    <h2>Status: Active</h2>
+
+    <!-- Animated Circles with Dots -->
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+    <div><span class="dot"></span></div>
+  </div>
+
+  <!-- ELECTRIC MOUSE JAVASCRIPT -->
+  <script>
+    document.addEventListener('mousemove', function(e) {
+      // Controls spark density (0.2 = continuous trail)
+      if (Math.random() > 0.4) return;
+
+      const spark = document.createElement('div');
+      spark.className = 'electric-spark';
+
+      // Position spark exact to mouse coordinates
+      spark.style.left = e.pageX + 'px';
+      spark.style.top = e.pageY + 'px';
+
+      // Random angles & dispersion translation for electric spark feel
+      const angle = Math.random() * 360;
+      const tx = (Math.random() - 0.5) * 50 + 'px';
+      const ty = (Math.random() - 0.5) * 50 + 'px';
+
+      spark.style.setProperty('--angle', angle);
+      spark.style.setProperty('--tx', tx);
+      spark.style.setProperty('--ty', ty);
+
+      document.body.appendChild(spark);
+
+      // Auto-cleanup DOM elements after animation ends
+      setTimeout(() => {
+        spark.remove();
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
